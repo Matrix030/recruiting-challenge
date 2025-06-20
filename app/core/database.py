@@ -10,6 +10,7 @@ from typing import Generator
 from sqlmodel import Session, SQLModel, create_engine
 
 from app.core.config import SQLITE_URL
+from app.models.profile import Profile  # Import Profile model explicitly
 
 # Create SQLite engine
 engine = create_engine(
@@ -19,6 +20,9 @@ engine = create_engine(
 
 def create_db_and_tables() -> None:
     """Create all database tables."""
+    # Drop all tables first to ensure clean state
+    SQLModel.metadata.drop_all(engine)
+    # Create tables with updated schema
     SQLModel.metadata.create_all(engine)
 
 def get_session() -> Generator[Session, None, None]:

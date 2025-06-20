@@ -11,6 +11,7 @@ A FastAPI-based face recognition service that provides face analysis, embedding 
 - SQLite persistence with SQLModel
 - Docker support
 - Pytest-based testing
+- Streamlit frontend demo
 
 ## Requirements
 
@@ -50,6 +51,22 @@ uvicorn app.main:app --reload
 ```
 
 2. Access the API documentation at http://localhost:8000/docs
+
+### Running the Frontend Demo
+
+1. Make sure the API server is running (see above)
+
+2. In a new terminal, start the Streamlit frontend:
+```bash
+streamlit run frontend/app.py
+```
+
+3. Open your browser to http://localhost:8501
+
+The frontend demo provides an intuitive interface for:
+- Creating face profiles from images
+- Viewing stored profiles
+- Verifying faces against stored profiles
 
 ### Using Docker
 

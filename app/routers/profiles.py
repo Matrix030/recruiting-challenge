@@ -95,7 +95,7 @@ def list_profiles(
     ).all()
     return profiles
 
-@router.post("/verify/{profile_id}", response_model=VerificationResult)
+@router.post("/profiles/verify/{profile_id}", response_model=VerificationResult)
 async def verify_face(
     profile_id: int,
     file: UploadFile = File(...),

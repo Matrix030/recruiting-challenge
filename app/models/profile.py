@@ -8,7 +8,8 @@ from datetime import datetime
 import json
 from typing import Optional, List
 
-from sqlmodel import Field, SQLModel, Column, JSON
+from sqlalchemy import Column, JSON
+from sqlmodel import Field, SQLModel
 
 
 class ProfileBase(SQLModel):
