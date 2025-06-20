@@ -1,2 +1,7 @@
 fastapi
 pillow
+insightface
+opencv-python
+numpy
+streamlit
+requests
