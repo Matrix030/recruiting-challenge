@@ -5,9 +5,10 @@ and their associated embeddings.
 """
 
 from datetime import datetime
+import json
 from typing import Optional, List
 
-from sqlmodel import Field, SQLModel
+from sqlmodel import Field, SQLModel, Column, JSON
 
 
 class ProfileBase(SQLModel):
@@ -17,7 +18,8 @@ class ProfileBase(SQLModel):
         description="Human-readable description of facial features"
     )
     embedding: List[float] = Field(
-        description="512-dimensional face embedding vector"
+        description="512-dimensional face embedding vector",
+        sa_column=Column(JSON)  # Store as JSON in database
     )
 
 

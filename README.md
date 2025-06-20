@@ -9,21 +9,17 @@ A FastAPI-based face recognition service that provides face analysis, embedding 
 - Face verification against stored profiles
 - RESTful API with OpenAPI documentation
 - SQLite persistence with SQLModel
-- Modern React frontend with TypeScript
 - Docker support
 - Pytest-based testing
 
 ## Requirements
 
 - Python 3.8+
-- Node.js 16+
 - InsightFace with buffalo_l model
 - CUDA-capable GPU (optional, falls back to CPU)
 - Docker (optional)
 
 ## Installation
-
-### Backend
 
 1. Clone the repository:
 ```bash
@@ -44,18 +40,6 @@ source .venv/bin/activate  # Linux/macOS
 pip install -r requirements.txt
 ```
 
-### Frontend
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
 ## Usage
 
 ### Running the API Server
@@ -67,26 +51,16 @@ uvicorn app.main:app --reload
 
 2. Access the API documentation at http://localhost:8000/docs
 
-### Running the Frontend
-
-1. Start the development server:
-```bash
-cd frontend
-npm start
-```
-
-2. Access the application at http://localhost:3000
-
 ### Using Docker
 
-1. Build the images:
+1. Build the image:
 ```bash
-docker-compose build
+docker build -t validia-face-api .
 ```
 
-2. Run the services:
+2. Run the container:
 ```bash
-docker-compose up
+docker run -p 8000:8000 validia-face-api
 ```
 
 ## API Endpoints
@@ -139,36 +113,16 @@ This threshold was chosen based on InsightFace's recommendations and empirical t
 - False accept rate (FAR)
 - False reject rate (FRR)
 
-## Frontend Features
-
-The React frontend provides an intuitive interface for:
-
-1. **Profile Creation**
-   - Drag-and-drop image upload
-   - Real-time face analysis
-   - Visual feedback on profile creation
-
-2. **Face Verification**
-   - Easy profile selection
-   - Visual similarity score
-   - Clear match/no-match indication
-
-3. **Profile Management**
-   - Grid view of all profiles
-   - Pagination support
-   - Profile details display
-
 ## Testing
 
-Run the backend test suite:
+Run the test suite:
 ```bash
 pytest
 ```
 
-Run the frontend tests:
+For verbose output:
 ```bash
-cd frontend
-npm test
+pytest -v
 ```
 
 ## Ethical Considerations
