@@ -15,10 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY app app/
-COPY tests tests/
-
-# Create upload directory
-RUN mkdir -p uploads
+COPY frontend frontend/
 
 # Run as non-root user
 RUN useradd -m appuser

@@ -1,1 +1,1 @@
-"""Validia Face Recognition API package.""" 
+"""Validia Face Recognition API.""" 
