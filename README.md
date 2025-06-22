@@ -32,9 +32,9 @@ A robust face recognition system that creates unique facial profiles and provide
 - Face verification with visual feedback
 - Real-time similarity scoring
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
+###Prerequisites
 - Python 3.8+
 - CUDA-capable GPU (optional)
 
@@ -73,16 +73,6 @@ streamlit run frontend/app.py
 3. Access:
 - API Documentation: http://localhost:8000/docs
 - Frontend Interface: http://localhost:8501
-
-### Docker Deployment
-
-```bash
-# Build image
-docker build -t validia-face-api .
-
-# Run container
-docker run -p 8000:8000 validia-face-api
-```
 
 ## Implementation Details
 
@@ -164,8 +154,6 @@ Response:
     "score": 0.95
 }
 ```
-
-
 
 ## Future Improvements
 
