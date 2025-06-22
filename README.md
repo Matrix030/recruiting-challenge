@@ -2,7 +2,7 @@
 
 A robust face recognition system that creates unique facial profiles and provides verification capabilities. Built with FastAPI and InsightFace, this system offers high-accuracy face detection, feature extraction, and similarity matching.
 
-## 🌟 Key Features
+## Key Features
 
 - **Face Detection & Analysis**: Extracts 512-dimensional face embeddings using InsightFace
 - **Profile Creation**: Generates detailed facial feature descriptions and stores embeddings
@@ -10,7 +10,7 @@ A robust face recognition system that creates unique facial profiles and provide
 - **Interactive Demo**: Streamlit-based UI for easy testing and visualization
 - **GPU Acceleration**: CUDA support for faster processing (with CPU fallback)
 
-## 🏗️ Architecture
+## Architecture
 
 ### Backend (FastAPI)
 - **Core Components**:
@@ -37,14 +37,12 @@ A robust face recognition system that creates unique facial profiles and provide
 ### Prerequisites
 - Python 3.8+
 - CUDA-capable GPU (optional)
-- Docker (optional)
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/validia-face-recognition.git
-cd validia-face-recognition
+git clone https://github.com/Matrix030/recruiting-challenge.git
 ```
 
 2. Create and activate virtual environment:
@@ -55,7 +53,7 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate    # Windows
 ```
 
-3. Install dependencies:
+3. Install dependencies (use uv for faster installation):
 ```bash
 pip install -r requirements.txt
 ```
@@ -86,7 +84,7 @@ docker build -t validia-face-api .
 docker run -p 8000:8000 validia-face-api
 ```
 
-## 💡 Implementation Details
+## Implementation Details
 
 ### Face Analysis Pipeline
 
@@ -137,53 +135,11 @@ Environment variables:
 - `SQLITE_URL`: Database connection string
 - `SIMILARITY_THRESHOLD`: Custom matching threshold
 
-## 🧪 Testing
-
-Run the test suite:
-```bash
-pytest
-```
-
-Tests cover:
-- Profile creation
-- Face verification
-- API endpoints
-- Database operations
-
-## 🔒 Security & Ethics
 
 ### Data Privacy
 - No raw images are stored
 - Only feature vectors and metadata retained
 - Local database by default
-
-### Ethical Considerations
-1. **Consent**: Always obtain explicit permission before processing facial data
-2. **Bias**: Be aware of potential demographic biases in face recognition
-3. **Transparency**: Clearly communicate how face data is used
-4. **Data Minimization**: Only store essential information
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📝 License
-
-MIT License - see LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- InsightFace for the face recognition models
-- FastAPI for the web framework
-- Streamlit for the frontend framework
-
-## 📚 API Documentation
-
-Detailed API documentation is available at `/docs` when the server is running. Key endpoints:
 
 ### Create Profile
 ```http
@@ -209,25 +165,21 @@ Response:
 }
 ```
 
-## 🔍 Performance Considerations
 
-- GPU acceleration for batch processing
-- Optimized image preprocessing
-- Efficient embedding storage and comparison
-- Configurable detection size for speed/accuracy tradeoff
 
-## 📈 Future Improvements
+## Future Improvements
 
 1. **Scalability**
    - Redis caching for frequent verifications
    - Distributed processing support
-   - Cloud storage options
 
 2. **Features**
    - Batch processing API
    - Age and gender estimation
    - Expression analysis
    - Multiple face handling
+   - Multimodel scanning to aggregate outputs of multiple models running in parallel 
+   - If all four modules—Biometrics, Deepfake Detection, and Liveness Checks—are successfully passed, we save the embedding from that session, as there is a chance that the biometric score was just above the threshold. Storing such embeddings helps enrich the user’s profile, leading to more accurate biometric verification in future sessions. 
 
 3. **Security**
    - Rate limiting

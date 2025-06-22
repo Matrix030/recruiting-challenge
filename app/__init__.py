@@ -1,1 +1,0 @@
-"""Validia Face Recognition API.""" 
