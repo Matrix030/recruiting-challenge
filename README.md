@@ -174,3 +174,6 @@ Response:
    - API key authentication
    - Audit logging
 
+## Reference:
+https://medium.com/@appanamukesh77/comprehensive-insights-onfacial-analysis-with-insightface-library-796d80464f45
+https://insightface.ai/
